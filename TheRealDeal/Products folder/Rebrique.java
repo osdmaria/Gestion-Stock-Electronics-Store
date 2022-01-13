@@ -4,9 +4,11 @@ public class Rebrique {
     
     public ArrayList<Product> rebriques = new ArrayList<>();
     String reb_N; 
+    int montant_cumule_de_rebrique;
 
-    public Rebrique(String name){
+    public Rebrique(String name, int mt){
         reb_N = name;
+        montant_cumule_de_rebrique = mt;
     }
 
 
@@ -29,8 +31,8 @@ public class Rebrique {
         return taux_Remise;
     }
 
-    public int prixApresRemise(Product produit, int remise){   //return le nouveau prix du PRODUIT
-        return produit.prix*remise*(1/100) + produit.prix;      
-    }
+    
 
+
+    
 }

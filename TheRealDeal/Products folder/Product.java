@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Product{
     protected String name;
@@ -60,10 +61,49 @@ public class Product{
 
     public Boolean verifier_Produit_Dispo(){
         if(this.quantite==0){
-            System.out.println("Vous ne pouvez pas le réserver, il est en rupture de stock. Revenez ulterieurement.");
             return false;
         }
         return true;
+    }
+
+
+    public int prixApresRemise(int montant_cumule, int remise){   //return le nouveau prix du PRODUIT
+        return montant_cumule*remise*(1/100) + this.prix;      
+    }
+
+
+    
+    public Product ajoutProduct(){
+        Scanner keyboard = new Scanner(System.in);
+        
+        System.out.println("Entrer les informations du produit:");
+        System.out.println("Nom:\n");
+        String name = keyboard.nextLine();
+
+        System.out.println("Reference:\n");
+        int ref = keyboard.nextInt();
+        keyboard.nextLine();
+
+        
+        String[] caracteristics = new String[3];
+        System.out.println("Caracteristics: (3 only)\n");
+        for(int i=0; i<3; i++){
+            caracteristics[i] = keyboard.nextLine();
+        }  
+
+        System.out.println("Description:\n");
+        String description1 = keyboard.nextLine();
+
+        
+        System.out.println("Prix:\n");
+        int prix = keyboard.nextInt();
+
+        System.out.println("Quantite:\n");
+        int quantite = keyboard.nextInt();
+
+        Product produit = new Product(name, ref, description1, caracteristics, prix, quantite);
+
+        return produit;
     }
 
 

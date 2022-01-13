@@ -35,7 +35,9 @@ public class Everything {
         String ct = db.rebrique1.reb_N;
         System.out.println(ct);
 
-
+        Rebrique hi = db.search_Rebrique_DB(1475);  //trouver rebrique
+        int mont = hi.montant_cumule_de_rebrique; 
+        System.out.println(mont);
 
         // Product p = db.rebrique1.rebrique.get(1);
         // p.affiche_produit();
