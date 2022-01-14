@@ -249,11 +249,11 @@ public class Store {
                         System.out.println("Donner le ref du produit que vous voulez retourner");
                         int refp = choixUser();
                         Product p = D.search_In_DB(refp);
-                        System.out.println("Ce produit va etre retourner" + p.getName());
+                        System.out.println("Ce produit va etre retourner : " + p.getName());
                         int qt = p.getQuantite();
                         D.update_Quantity(refp, qt++);
                         caisse = caisse + p.getPrix();
-                        System.out.println("Le produit a ete retourne");
+                        System.out.println("Le produit a ete retourne . ");
 
                         break;
 
@@ -464,11 +464,11 @@ public class Store {
                         System.out.println("Login");
                         System.out.println("Donner votre nom ");
                         String s1 = userinput();
-                        System.out.println("Donner votre prenom");
+                        System.out.println("Donner votre prenom ");
                         String s2 = userinput();
                         System.out.println("Donner votre mot de passe ");
                         String s3 = userinput();
-                        CompteClient cmp = DataB.LoginClient(s1, s2, s3);
+                        CompteClient cmp = DataB.LoginClient(s1,s2,s3);
                         if (cmp != null) {
                             System.out.println("there's your account");
                             cmp.AfficheCompte();
@@ -508,6 +508,7 @@ public class Store {
                                 System.out.println("Votre panier");
                                 for (Product pr : panier) {
                                     pr.affiche_produit();
+                                    System.out.println();
                                 }
                                 System.out.println("Vous avez 2 jour pour venir recuperer vos produits");
                             }

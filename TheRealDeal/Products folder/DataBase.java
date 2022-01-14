@@ -36,35 +36,55 @@ public class DataBase {
         //Categorie informatique
         stock.categories.add(Informatique);
 
-        String[] caracteristics = new String[]{"this", "that", "dccc"};
-        Informatique.products.add(new Product("kfj", 1234, "ddddd",caracteristics, 1000, 1));
+        String[] caracteristics = new String[]{"Proccessor : Ryzen AMD", "RAM : 16 GB", "Disque Dur : 512 GB SSD " ,"Carte graphique : Asus GTX 1660 "};
+        Informatique.products.add(new Product("Ordinateur Gamer", 1001, "",caracteristics, 1200, 7));
+
+        String[] caracteristics0 = new String[]{"Proccessor intel CORE i7 8th Gen", "RAM 8 GB ", "Disque Dur : 1T HDD","Carte graphique : nvidia"};
+        Informatique.products.add(new Product("Ordinateur de Bureau", 1002, "",caracteristics0, 2500, 11));
+
+        String[] caracteristics01 = new String[]{"Proccessor : M1 ", "RAM 8 Go ", "Disque Dur : 256 Go","Carte graphique : Integre"};
+        Informatique.products.add(new Product("PC Portable APPLE MacBook Pro 2020", 1003, "",caracteristics01, 2800, 4));
+
 
 
         //Categorie Mobiles
         stock.categories.add(Mobiles);
 
-        String[] caracteristics1 = new String[]{"fgggg", "kkkk", "zzzzzz"};
-        Mobiles.products.add(new Product("der", 0000, "aaaaa",caracteristics1, 1100, 15));
+        String[] caracteristics1 = new String[]{"Processor : Exynos 990 Samsung", "Camera : 108 MPx", "Taille de l'ecran : 6.9 pouces", "RAM : 12Go","Batterie : 5000 mAh"};
+        Mobiles.products.add(new Product("Samsung Galaxy S20 Ultra", 2001, "aaaaa",caracteristics1, 1400, 22));
+
+        String[] caracteristics11 = new String[]{"Processor : A13 Bionic Apple", "Camera : 12 MPx", "Taille de l'ecran : 6.5 pouces", "RAM : 4 Go","Batterie : 3969 mAh"};
+        Mobiles.products.add(new Product("IPhone Pro Max ", 2002, "aaaaa",caracteristics11, 1400, 20));
 
     
         //Categorie Electronique
         stock.categories.add(Electronique);
 
-        String[] caracteristics2 = new String[]{"ttttt", "gggg", "bbbb"};
-        Electronique.products.add(new Product("uki", 1776, "ggggg",caracteristics2, 1200, 1));
+        String[] caracteristics2 = new String[]{"Taille : 50 Pouces ", "Categorie :LED","Definition : UHD 4K", "Resolution : 3840x2160 px"};
+        Electronique.products.add(new Product("Television LG ", 3001, "ggggg",caracteristics2, 1700, 17));
+
+        String[] caracteristics21 = new String[]{"Taille : 50 Pouces ","Categorie :LED", "Definition : UHD 4K", "Resolution : 3840x2160 px"};
+        Electronique.products.add(new Product("Television Samsung ", 3002, "ggggg",caracteristics21, 1700, 19));
         
 
         // Categorie Electromenager
         stock.categories.add(Electromenager);
 
-        String[] caracteristics3 = new String[]{"55555", "g5kg", "kob"};
-        Electromenager.products.add(new Product("uki", 1455, "ggggg",caracteristics3, 1520, 10));
+        String[] caracteristics3 = new String[]{ "Largeur/Hauteur/Profondeur : 88.5/28.5/20.5","Poids : 10" ,"Categorie : Split", "Capacite de chauffage et refroidissement : 12000 Btu", " "};
+        Electromenager.products.add(new Product("Climatiseur LG", 4001, "ggggg",caracteristics3, 1520, 9));
+
+        String[] caracteristics31 = new String[]{"Largeur/Hauteur/Profondeur : 73.5/187/267.5","Categorie : 2 portes","Capacite total : 499 Litres (Refrigerateur: 354L / Congelateur: 95L) ", };
+        Electromenager.products.add(new Product("Refrigerateur Brandt",4002,"gggg",caracteristics31,2300,9));
 
         //Kts scolaires
         stock.categories.add(Kits_scolaires);
 
-        String[] caracteristics4 = new String[]{"aaaas", "scsdf", "cxvv"};
-        Kits_scolaires.products.add(new Product("uki", 1475, "ggggg",caracteristics4, 1422, 22));
+        String[] caracteristics4 = new String[]{"Puissance nominale : 20 W", "Tension nominale : 12 V", "Courant : 1.11 A ","Duree de vie : > a 15 ans "};
+        Kits_scolaires.products.add(new Product("Panneau solaire ",5001 , "ggggg",caracteristics4, 2000, 16));
+
+        String[] caracteristics41 = new String[]{"Tension : 12 V", "Capacite : 100 Ah", "Duree de vie : 900 cycles "};
+        Kits_scolaires.products.add(new Product("Batterie solaire ",5002 , "ggggg",caracteristics41, 1020, 14));
+
 
         this.DB_stock = stock;
 

@@ -48,12 +48,12 @@ public class Product{
         System.out.println("Nom Du Produit:" + this.name + "\n" +
         "Reference:" + this.ref + "\n" +
         "Description:" + this.description);
-        System.out.println("Caractéristiques:");
+        System.out.println("Caracteristiques:");
         for(String element: caracteristics){
             System.out.println(" -" + element);
         }
         System.out.println("Prix:"+ this.prix + "\n"
-        + "Quantité:" + this.quantite);
+        + "Quantite:" + this.quantite);
         
     }
 

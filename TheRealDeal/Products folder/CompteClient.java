@@ -25,10 +25,10 @@ public class CompteClient{
     
      public void AfficheCompte(){
         System.out.println("Nom : "+this.nom+
-        "  Prenom : "+this.prenom+
-        "  Ref : "+this.ref+
-        "  Adresse : "+this.adresse+
-        "  montant Cumule : "+this.m_rebriques);
+        " \n Prenom : "+this.prenom+
+        " \n Ref : "+this.ref+
+        "  \nAdresse : "+this.adresse+
+        "  \nmontant Cumule : "+this.m_rebriques);
     }
 
     public String getnom() {
@@ -70,6 +70,7 @@ public class CompteClient{
     public void setmontant(ArrayList<Rebrique> m_rebriques){
         this.m_rebriques= m_rebriques;
     }
+
 
 
 

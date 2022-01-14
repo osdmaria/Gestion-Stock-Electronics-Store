@@ -54,6 +54,17 @@ public class Client{
         return Client;
     }
 
+    public void setnom(String nom){
+        this.nom = nom;
+    }
+
+    public void setprenom(String prenom){
+        this.prenom = prenom;
+    }
+
+    public void setmdp(String mdp){
+        this.mdp = mdp;
+    }
     
    
 
