@@ -20,27 +20,28 @@ public class Store {
     }
 
     public static void main(String[] args) throws Exception {
-        DataBase db = new DataBase();
+        DataBaseP db = new DataBaseP();
         DataBaseC dbC = new DataBaseC();
         Scanner s = new Scanner(System.in);
 
         ASCIIArtGenerator artGen = new ASCIIArtGenerator();
-        artGen.printTextArt("BIENVENUE DANS", ASCIIArtGenerator.ART_SIZE_SMALL, ASCIIArtFont.ART_FONT_SANS_SERIF, "*");
+        artGen.printTextArt("BIENVENUE DANS", ASCIIArtGenerator.ART_SIZE_SMALL, ASCIIArtFont.ART_FONT_SANS_SERIF, "#");
         System.out.println();
         System.out.println();
         artGen.printTextArt("NOTRE B O U T I Q U E !", ASCIIArtGenerator.ART_SIZE_SMALL,
-                ASCIIArtFont.ART_FONT_SANS_SERIF, "*");
+                ASCIIArtFont.ART_FONT_SANS_SERIF, "#");
         System.out.println();
 
         System.out.println("Voulez vous executer le programme en tant que:");
         System.out.println("1- Magasiner");
         System.out.println("2- Agent Commercial");
-        System.out.println("3- Client");
+        System.out.println("3- Client\n");
+        System.out.println("0- Quitter");
         // Take user input
         int choice;
         do {
             choice = choixUser();
-        } while (choice != 1 && choice != 2 && choice != 3);
+        } while (choice != 1 && choice != 2 && choice != 3 && choice !=0);
 
         switch (choice) {
 
@@ -94,6 +95,7 @@ public class Store {
                     System.out.println("Voici le produit que vous avez entré au stock:");
                     product.affiche_produit();
                 }
+                System.out.println("Merci! Passez une bonne journée");
 
                 break;
 
@@ -213,6 +215,7 @@ public class Store {
                                 }
 
                                 for (Product p : achats) {
+                                    p.setQuantite(p.quantite--);
                                     if (db.search_Rebrique_DB(p.ref).reb_N == cclient.getmontantcumule().get(0).reb_N) {
                                         cclient.getmontantcumule().get(0).montant_cumule_de_rebrique = +p.prix;
                                     }
@@ -242,14 +245,20 @@ public class Store {
                         break;
 
                     case 2:
-                        DataBase D = new DataBase();
+                        DataBaseP D = new DataBaseP();
 
                         System.out.println("Retourner un produit");
 
                         System.out.println("Donner le ref du produit que vous voulez retourner");
                         int refp = choixUser();
                         Product p = D.search_In_DB(refp);
-                        System.out.println("Ce produit va etre retourner" + p.getName());
+                        System.out.println("Ce produit va etre retourné:  " + p.getName());
+                        int temp;
+                        do {
+                            System.out.println("Taper 1 pour confirmer");
+                            temp = s.nextInt();
+                            
+                        } while (temp !=1);
                         int qt = p.getQuantite();
                         D.update_Quantity(refp, qt++);
                         caisse = caisse + p.getPrix();
@@ -446,7 +455,7 @@ public class Store {
                     case 2:// Recherche de produit par reference (verifier la disponibilite)
                         System.out.println("Recherche de produit par reference");
                         System.out.println("Veuillez donner la reference du produit que vous chercher");
-                        DataBase data = new DataBase();
+                        DataBaseP data = new DataBaseP();
                         Product produit = new Product();
                         int reference = choixUser();
                         produit = data.search_In_DB(reference);
@@ -460,15 +469,14 @@ public class Store {
                         break;
 
                     case 3: // faire le login pour verifier le compte
-                        DataBaseC DataB = new DataBaseC();
                         System.out.println("Login");
                         System.out.println("Donner votre nom ");
-                        String s1 = userinput();
+                        String s1 = s.nextLine();
                         System.out.println("Donner votre prenom");
-                        String s2 = userinput();
+                        String s2 = s.nextLine();
                         System.out.println("Donner votre mot de passe ");
-                        String s3 = userinput();
-                        CompteClient cmp = DataB.LoginClient(s1, s2, s3);
+                        String s3 = s.nextLine();
+                        CompteClient cmp = dbC.LoginClient(s1, s2, s3);
                         if (cmp != null) {
                             System.out.println("there's your account");
                             cmp.AfficheCompte();
@@ -480,7 +488,7 @@ public class Store {
 
                     case 4:
                         System.out.println("Reserver des produits");
-                        DataBase Da = new DataBase();
+                        DataBaseP Da = new DataBaseP();
                         ArrayList<Product> panier = new ArrayList<>();
                         Product prd;
                         int refp;
@@ -516,7 +524,9 @@ public class Store {
                         break;
 
                 }
-
+                case 0:
+                artGen.printTextArt("Merci pour votre visite", ASCIIArtGenerator.ART_SIZE_SMALL, ASCIIArtFont.ART_FONT_SANS_SERIF,"#");
+                    break;
         }
 
     }

@@ -17,7 +17,7 @@ public class Rebrique {
     }
 
     public int remiseTaux(){
-        DataBase db = new DataBase();
+        DataBaseP db = new DataBaseP();
         int taux_Remise = 0;
         if(this.reb_N == db.rebrique1.reb_N){
             taux_Remise = 5;

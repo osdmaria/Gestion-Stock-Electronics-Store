@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 
-public class DataBase {
+public class DataBaseP {
 
     Stock DB_stock = new Stock();
     ArrayList<Rebrique> rebriques = new ArrayList<>(); 
@@ -18,7 +18,7 @@ public class DataBase {
 
     //constructor 
 
-    public DataBase() {
+    public DataBaseP() {
         
 
         Categories Informatique = new Categories("Informatique");
