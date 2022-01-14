@@ -18,6 +18,8 @@ DataBase db = new DataBase();
 rebriques = db.rebriques;
 ArrayList<CompteClient> c_clients = new ArrayList<CompteClient>();
 c_clients.add(new CompteClient("Saadi","Mahdi",1325647,"El Achour",rebriques));
+c_clients.get(0).getmontantcumule().get(0).montant_cumule_de_rebrique= 1000;   //We set le montant cumulé de la rebrique 1 de Saadi Mahdi à 1000 DA
+
 c_clients.add(new CompteClient("Oussadi","Maria",2547869,"idk",rebriques));
 c_clients.add(new CompteClient("Eren","Jager",142536,"Paradise Island",rebriques));
 c_clients.add(new CompteClient("Gon","Freecss",417852,"Whale Island",rebriques));

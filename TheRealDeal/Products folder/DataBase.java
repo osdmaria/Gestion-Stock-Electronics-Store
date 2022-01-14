@@ -4,10 +4,11 @@ import java.util.ArrayList;
 public class DataBase {
 
     Stock DB_stock = new Stock();
+    ArrayList<Rebrique> rebriques = new ArrayList<>(); 
     Rebrique rebrique1 = new Rebrique("Rebrique 01", 0);
     Rebrique rebrique2 = new Rebrique("Rebrique 02", 0);
     Rebrique rebrique3 = new Rebrique("Rebrique 03", 0);
-    ArrayList<Rebrique> rebriques = new ArrayList<>(); 
+
     public Stock getStock(){
         return this.DB_stock;
     }
@@ -28,7 +29,7 @@ public class DataBase {
 
         Stock stock = new Stock();
 
-        Rebrique reb1= new Rebrique("Rebrique 01",0);
+        Rebrique reb1= new Rebrique("Rebrique 01", 0);
         Rebrique reb2= new Rebrique("Rebrique 02", 0);
         Rebrique reb3= new Rebrique("Rebrique 03", 0);
 
@@ -36,7 +37,7 @@ public class DataBase {
         stock.categories.add(Informatique);
 
         String[] caracteristics = new String[]{"this", "that", "dccc"};
-        Informatique.products.add(new Product("kfj", 1234, "ddddd",caracteristics, 1000, 0));
+        Informatique.products.add(new Product("kfj", 1234, "ddddd",caracteristics, 1000, 1));
 
 
         //Categorie Mobiles
@@ -74,10 +75,10 @@ public class DataBase {
         reb2.rebriques.addAll(Electromenager.products);
         reb3.rebriques.addAll(Kits_scolaires.products);
         
+
         this.rebrique1 = reb1;
         this.rebrique2 = reb2;
         this.rebrique3 = reb3;
-
         //create an arraylist of rebriques
         this.rebriques.add(reb1);
         this.rebriques.add(reb2);

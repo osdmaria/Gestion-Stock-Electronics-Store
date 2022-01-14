@@ -68,7 +68,7 @@ public class Product{
 
 
     public int prixApresRemise(int montant_cumule, int remise){   //return le nouveau prix du PRODUIT
-        return montant_cumule*remise*(1/100) + this.prix;      
+        return (int) (this.prix - (montant_cumule*remise*(0.01)) );      
     }
 
 
@@ -106,11 +106,4 @@ public class Product{
         return produit;
     }
 
-
-    public static void main(String[] args) {
-         String[] caracteristics = new String[]{"this", "that", "dccc"};
-        Product p = new Product("kfj", 1354, "ldkfmsl",caracteristics, 1000, 13);
-
-        p.affiche_produit();
-    }
 }

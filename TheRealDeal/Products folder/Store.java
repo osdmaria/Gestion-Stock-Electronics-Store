@@ -56,7 +56,7 @@ public class Store {
                     c1 = choixUser();
                 } while (c1 != 1);
                 System.out.println("Dans quelle categories voudrier vous l'ajouter");
-                System.out.println("1 - Mobiles \n2- Informatique \n3- Electronique \n4- Electromenager \n5- Kit Scolaire");
+                System.out.println("1 - Informatique \n2- Mobiles \n3- Electronique \n4- Electromenager \n5- Kit Scolaire");
                 do {
                     c1 = choixUser();
                 } while (c1 != 1 && c1 != 2 && c1 != 3 && c1 != 4 && c1 != 5);
@@ -263,9 +263,9 @@ public class Store {
 
 
             case 3:
-            System.out.println("Bienvenue chere client");
-            System.out.println("Que voulais vous faire ?");
-            System.out.println("1-Checker tout le stock");
+            System.out.println("Bienvenue cher client");
+            System.out.println("Que voulez vous faire ?");
+            System.out.println("1-Checker le showroom");
             System.out.println("2-Recherche d'un produit");
             System.out.println("3-Login");
             System.out.println("4-Reserver");
@@ -492,7 +492,7 @@ public class Store {
                         System.out.println("lepppp");
                     }
 
-                    System.out.println("voiulez vous reserver autre chose ? \n 1 pour oui 0 pour non");
+                    System.out.println("voulez vous reserver autre chose ? \n 1 pour oui 0 pour non");
                     
                     ccc= choixUser();
                 }while(ccc == 1 );
