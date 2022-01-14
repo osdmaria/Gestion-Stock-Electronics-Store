@@ -36,6 +36,7 @@ public class Store {
         System.out.println("1- Magasiner");
         System.out.println("2- Agent Commercial");
         System.out.println("3- Client\n");
+        System.out.println("4- Responsable Commercial\n");
         System.out.println("0- Quitter");
         // Take user input
         int choice;
@@ -264,7 +265,6 @@ public class Store {
                         caisse = caisse + p.getPrix();
                         System.out.println("Le produit a ete retourne");
 
-<<<<<<< Updated upstream
                         break;
 
                     case 3:
@@ -275,26 +275,11 @@ public class Store {
                         CompteClient cc = AC.createCompteClient();
                         cc.AfficheCompte();
                         DD.addCClient(cc);
-=======
-                    break;
-                case 2:
-                    
-                    break;    
-                case 3:
-                    
-                    break;
-                case 4:
-                    System.out.println("Bienvenue dans votre caisse cher Agent Commercial");
-                    System.out.println("Voici le total qu'il y'a dans votre caisse:" + caisse + " DA");
-                    break;
-                
-            }
-                break;
->>>>>>> Stashed changes
 
                         break;
                     case 4:
-
+                        System.out.println("Bienvenue dans votre caisse: ");
+                        System.out.println("Votre caisse contient: " + caisse);
                         break;
 
                 }
@@ -541,10 +526,13 @@ public class Store {
                         break;
 
                 }
+                case 4:
+                    System.out.println("");
+                    break;
                 case 0:
-                artGen.printTextArt("Merci pour votre visite", ASCIIArtGenerator.ART_SIZE_SMALL, ASCIIArtFont.ART_FONT_SANS_SERIF,"#");
+                System.out.println(".");;
                     break;
         }
-
+        artGen.printTextArt("Merci pour votre visite", ASCIIArtGenerator.ART_SIZE_SMALL, ASCIIArtFont.ART_FONT_SANS_SERIF,"#");
     }
 }

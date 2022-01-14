@@ -77,26 +77,5 @@ this.DBC=clients ;
     DB_client.add(client);
 }
 
-public static void main(String[] args){
 
-   DataBaseC db = new DataBaseC();
-    //CompteClient compte = db.search(2547869);
-    /*if(compte!=null){
-        System.out.println("trouver");
-        compte.AfficheCompte();
-    }*/
-   
-  //  Client client = new Client("Saadi","Mahdi",1325647,"22072002","El Achour");
-    
-
-    CompteClient compte =   db.LoginClient("Gon","Freecss","myfatherisgone");
-
-    if(compte!=null){
-        System.out.println("there's your account") ;
-        compte.AfficheCompte();
-    }else{
-        System.out.println("pfff");
-    }
-     
-}
 }
