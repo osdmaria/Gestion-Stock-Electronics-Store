@@ -30,14 +30,22 @@ clients.add(new Client("Gon","Freecss",417852,"myfatherisgone","Whale Island"));
 this.DBC=clients ;
 }
 
+  public List<Client> getClients(){
+      return this.DBC;
+  }
+
+  public List<CompteClient> getCClients(){
+      return this.DB_client;
+  }
 
 
 
 
-  public CompteClient Login(String nom ,String prenom,String mdp){
+
+  public  CompteClient LoginClient(String nom ,String prenom,String mdp){
+      
 
     for(int i=0;i<DBC.size();i++){
-         
               if(nom==DBC.get(i).getnom() && prenom==DBC.get(i).getprenom() && DBC.get(i).getmdp()==mdp){ 
                     return DB_client.get(i);
               }  
@@ -67,7 +75,7 @@ public static void main(String[] args){
   //  Client client = new Client("Saadi","Mahdi",1325647,"22072002","El Achour");
     
 
-    CompteClient compte =   db.Login("Gon","Freecss","myfatherisgone");
+    CompteClient compte =   db.LoginClient("Gon","Freecss","myfatherisgone");
 
     if(compte!=null){
         System.out.println("there's your account") ;
