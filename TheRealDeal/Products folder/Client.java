@@ -7,7 +7,6 @@ public class Client{
     private String nom;
     private String prenom;
     private int refc;
-    private String mdp ;
     private String adresse;
 
     
@@ -18,11 +17,10 @@ public class Client{
     }*/
     public Client (){}
     
-    public Client(String nom,String prenom,int refc,String mdp ,String adresse){
+    public Client(String nom,String prenom,int refc,String adresse){
         this.nom = nom;
         this.prenom = prenom;
         this.refc = refc;
-        this.mdp = mdp;
         this.adresse = adresse;
     }
 
@@ -42,9 +40,6 @@ public class Client{
         return refc;
     }
 
-    public String getmdp(){
-        return mdp;
-    }
 
     public String getadresse() {
         return adresse;

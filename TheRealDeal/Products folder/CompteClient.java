@@ -5,15 +5,17 @@ public class CompteClient{
     private String prenom;
     private int ref;
     private String adresse;
+    private String mdp;
     private ArrayList<Rebrique> m_rebriques;
 
     public CompteClient(){}
     
     
-    public CompteClient(String nom, String prenom, int ref, String adresse, ArrayList<Rebrique> m_rebriques){
+    public CompteClient(String nom, String prenom, int ref, String mdp , String adresse, ArrayList<Rebrique> m_rebriques){
         this.nom = nom;
         this.prenom = prenom;
         this.ref = ref;
+        this.mdp = mdp;
         this.adresse = adresse;
         this.m_rebriques = m_rebriques;
     }
@@ -25,10 +27,10 @@ public class CompteClient{
     
      public void AfficheCompte(){
         System.out.println("Nom : "+this.nom+
-        " \n Prenom : "+this.prenom+
-        " \n Ref : "+this.ref+
-        "  \nAdresse : "+this.adresse+
-        "  \nmontant Cumule : "+this.m_rebriques);
+        "  Prenom : "+this.prenom+
+        "  Ref : "+this.ref+
+        "  Adresse : "+this.adresse+
+        "  montant Cumule : "+this.m_rebriques.get(0).montant_cumule_de_rebrique + this.m_rebriques.get(1).montant_cumule_de_rebrique + this.m_rebriques.get(2).montant_cumule_de_rebrique);
     }
 
     public String getnom() {
@@ -45,6 +47,9 @@ public class CompteClient{
 
     public String getadresse(){
         return adresse;
+    }
+    public String getMpd(){
+        return mdp;
     }
 
     public ArrayList<Rebrique> getmontantcumule(){

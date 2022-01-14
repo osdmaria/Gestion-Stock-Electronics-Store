@@ -14,21 +14,31 @@ public   List<Client> DBC;
 
 public DataBaseC(){
 ArrayList<Rebrique> rebriques = new ArrayList<>();
-DataBase db = new DataBase();
+DataBaseP db = new DataBaseP();
 rebriques = db.rebriques;
 ArrayList<CompteClient> c_clients = new ArrayList<CompteClient>();
-c_clients.add(new CompteClient("Saadi","Mahdi",1325647,"El Achour",rebriques));
-c_clients.get(0).getmontantcumule().get(0).montant_cumule_de_rebrique= 1000;   //We set le montant cumulé de la rebrique 1 de Saadi Mahdi à 1000 DA
+c_clients.add(new CompteClient("Saadi","Mahdi",1325647,"22072002","El Achour",rebriques));
+c_clients.get(0).getmontantcumule().get(0).montant_cumule_de_rebrique= 0;   //We set le montant cumulé de la rebrique 1 de Saadi Mahdi à 1000 DA
 
-c_clients.add(new CompteClient("Oussadi","Maria",2547869,"idk",rebriques));
-c_clients.add(new CompteClient("Eren","Jager",142536,"Paradise Island",rebriques));
-c_clients.add(new CompteClient("Gon","Freecss",417852,"Whale Island",rebriques));
+
+c_clients.add(new CompteClient("Oussadi","Maria",2547869,"12345698","Bordj El Kiffan",rebriques));
+c_clients.get(1).getmontantcumule().get(2).montant_cumule_de_rebrique= 3000;     //Oussadi Maria a desormais un montant cumulé de 3000 da dans la 3eme rebrique
+c_clients.get(1).getmontantcumule().get(1).montant_cumule_de_rebrique= 1000;        //un montant cumulé de 1000 DA dans la 2eme rebrique
+
+c_clients.add(new CompteClient("Eren","Jager",142536,"freedom","Paradise Island",rebriques));
+c_clients.get(2).getmontantcumule().get(2).montant_cumule_de_rebrique= 2500;  
+
+c_clients.add(new CompteClient("Gon","Freecss",417852,"myfatherisgone","Whale Island",rebriques));
+c_clients.get(3).getmontantcumule().get(0).montant_cumule_de_rebrique= 2500;  
+c_clients.get(3).getmontantcumule().get(1).montant_cumule_de_rebrique= 1000;  
+c_clients.get(3).getmontantcumule().get(2).montant_cumule_de_rebrique= 500;  
+
 this.DB_client=c_clients;
 List<Client> clients = new ArrayList<Client>();
-clients.add(new Client("Saadi","Mahdi",1325647,"22072002","El Achour"));
-clients.add(new Client("Oussadi","Maria",2547869,"12345698","idk"));
-clients.add(new Client("Eren","Jager",142536,"freedom","Paradise Island"));
-clients.add(new Client("Gon","Freecss",417852,"myfatherisgone","Whale Island"));
+clients.add(new Client("Saadi","Mahdi",1325647,"El Achour"));
+clients.add(new Client("Oussadi","Maria",2547869,"Bordj El Kiffan"));
+clients.add(new Client("Eren","Jager",142536,"Paradise Island"));
+clients.add(new Client("Gon","Freecss",417852,"Whale Island"));
 this.DBC=clients ;
 }
 
@@ -45,14 +55,12 @@ this.DBC=clients ;
 
 
   public  CompteClient LoginClient(String nom ,String prenom,String mdp){
-      
-
-    for(int i=0;i<DBC.size();i++){
-              if(nom==DBC.get(i).getnom() && prenom==DBC.get(i).getprenom() && DBC.get(i).getmdp()==mdp){ 
-                    return DB_client.get(i);
-              }  
-      }
-     return null;
+    for(CompteClient client : this.DB_client){
+        if (client.getnom().equals(nom) && client.getprenom().equals(prenom) && client.getMpd().equals(mdp)){
+            return client;
+        }
+    }
+    return null;
   }
 
    public CompteClient searchClient(int ref){
@@ -69,26 +77,5 @@ this.DBC=clients ;
     DB_client.add(client);
 }
 
-public static void main(String[] args){
 
-   DataBaseC db = new DataBaseC();
-    //CompteClient compte = db.search(2547869);
-    /*if(compte!=null){
-        System.out.println("trouver");
-        compte.AfficheCompte();
-    }*/
-   
-  //  Client client = new Client("Saadi","Mahdi",1325647,"22072002","El Achour");
-    
-
-    CompteClient compte =   db.LoginClient("Gon","Freecss","myfatherisgone");
-
-    if(compte!=null){
-        System.out.println("there's your account") ;
-        compte.AfficheCompte();
-    }else{
-        System.out.println("pfff");
-    }
-     
-}
 }
