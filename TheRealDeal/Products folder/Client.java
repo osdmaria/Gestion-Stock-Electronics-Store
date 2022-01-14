@@ -57,9 +57,7 @@ public class Client{
         this.prenom = prenom;
     }
 
-    public void setmdp(String mdp){
-        this.mdp = mdp;
-    }
+
     
    
 
