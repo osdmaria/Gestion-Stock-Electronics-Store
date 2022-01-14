@@ -106,6 +106,7 @@ public class Store {
             int c2;
             int caisse = 0;
             int ref_C;
+            int sum=0;
             CompteClient cclient = new CompteClient();
             do {
                 c2 = choixUser();
@@ -125,7 +126,9 @@ public class Store {
                         System.out.println("Entrer la reference du client");  //utiliser la ref du client pour le trouver 
                         ref_C = s.nextInt();
                         cclient = dbC.searchClient(ref_C);
-                        cclient.AfficheCompte();
+                        if(cclient != null){
+                            cclient.AfficheCompte();
+                        }
                     }
 
                     System.out.println("Entrer le nombre de produits à acheter");
@@ -148,8 +151,57 @@ public class Store {
                     }
                     if(achats.isEmpty() == false){
                         System.out.println("Voici le panier du client" );
-                        for(Product p : achats){
-                            if(choix1 == 1){
+                        for(Product p : achats){   
+                        System.out.println("- Nom du produit:" + p.name);
+                        System.out.println("      Prix:" + p.prix);
+                        }
+                        
+                        if(choix1 == 1 && cclient != null){
+                            if(cclient.getmontantcumule().get(0).montant_cumule_de_rebrique + cclient.getmontantcumule().get(1).montant_cumule_de_rebrique + cclient.getmontantcumule().get(2).montant_cumule_de_rebrique == 0){
+                                System.out.println("Le client ne peut pas belificier d'une remise car il n'a pas de montant cumulé");
+                                sum = db.vendreSansRemise(achats);
+                            }else{
+                                System.out.println("Le client peut benificier d'une remise, voudrait-il l'appliquer?");
+                                int choix2=0;
+                                do {
+                                    System.out.println("1- Oui \n2- Non");
+                                    choix2= s.nextInt();
+                                    
+                                } while (choix2 != 1 && choix2 !=2);
+                                if(choix2 == 1){
+                                    for(Product pr : achats){
+                                    if(db.search_Rebrique_DB(pr.ref).reb_N == cclient.getmontantcumule().get(0).reb_N){
+                                        if(cclient.getmontantcumule().get(0).montant_cumule_de_rebrique>0){
+                                            sum = pr.prixApresRemise(cclient.getmontantcumule().get(0).montant_cumule_de_rebrique, 5) + sum;
+                                            cclient.getmontantcumule().get(0).montant_cumule_de_rebrique =0;
+                                        }else{
+                                            sum =+ pr.prix;
+                                        }
+                                    }
+                                    if(db.search_Rebrique_DB(pr.ref).reb_N == cclient.getmontantcumule().get(1).reb_N){
+                                        if(cclient.getmontantcumule().get(1).montant_cumule_de_rebrique>0){
+                                            sum = pr.prixApresRemise(cclient.getmontantcumule().get(1).montant_cumule_de_rebrique, 10) + sum;
+                                            cclient.getmontantcumule().get(1).montant_cumule_de_rebrique =0;
+                                        }else{
+                                            sum =+ pr.prix;
+                                        }
+                                    }
+                                    if(db.search_Rebrique_DB(pr.ref).reb_N == cclient.getmontantcumule().get(2).reb_N){
+                                        if(cclient.getmontantcumule().get(2).montant_cumule_de_rebrique>0){
+                                            sum = pr.prixApresRemise(cclient.getmontantcumule().get(2).montant_cumule_de_rebrique, 15) + sum;
+                                            cclient.getmontantcumule().get(2).montant_cumule_de_rebrique =0;
+                                        }else{
+                                            sum =+ pr.prix;
+                                        }
+                                    }
+                                    }
+
+                                }else{
+                                    sum = db.vendreSansRemise(achats);
+                                }
+                            }
+                            
+                            for(Product p : achats){
                                 if(db.search_Rebrique_DB(p.ref).reb_N == cclient.getmontantcumule().get(0).reb_N){
                                     cclient.getmontantcumule().get(0).montant_cumule_de_rebrique =+ p.prix;
                                 }
@@ -161,19 +213,20 @@ public class Store {
                                 }
 
                             }
-                            
-                        System.out.println("- " + p.name);
-                        
                         }
-                        
                         int choix= 0;
                         do {
                             System.out.println("Presser sur 1 pour confirmer");
                             choix= s.nextInt();
                             
                         } while (choix != 1);
+                        caisse =+ sum;
                         System.out.println("La vente est confirmée!");
-
+                        System.out.println("La caisse a ete mise a jour:" + caisse +"DA");
+                        
+                        
+                    }else{
+                        System.out.println("Aucun produit n'est disponible");
                     }
                     
                     

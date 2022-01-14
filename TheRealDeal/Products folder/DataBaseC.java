@@ -51,6 +51,7 @@ this.DBC=clients ;
             return DB_client.get(i);
            }
        }
+       System.out.println("Compte client n'existe pas dans la base de donnee");
        return null;
    }
 
