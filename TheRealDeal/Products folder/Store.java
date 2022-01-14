@@ -264,6 +264,7 @@ public class Store {
                         caisse = caisse + p.getPrix();
                         System.out.println("Le produit a ete retourne");
 
+<<<<<<< Updated upstream
                         break;
 
                     case 3:
@@ -274,6 +275,22 @@ public class Store {
                         CompteClient cc = AC.createCompteClient();
                         cc.AfficheCompte();
                         DD.addCClient(cc);
+=======
+                    break;
+                case 2:
+                    
+                    break;    
+                case 3:
+                    
+                    break;
+                case 4:
+                    System.out.println("Bienvenue dans votre caisse cher Agent Commercial");
+                    System.out.println("Voici le total qu'il y'a dans votre caisse:" + caisse + " DA");
+                    break;
+                
+            }
+                break;
+>>>>>>> Stashed changes
 
                         break;
                     case 4:
