@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Client{
     private static final Client Client = null;
@@ -14,6 +16,7 @@ public class Client{
     /*public void toString() {
         return "nom"+this.getnom+"prenom"+this.getprenom+" ref"+this.getref+" adresse"+this.getadresse;
     }*/
+    public Client (){}
     
     public Client(String nom,String prenom,int refc,String mdp ,String adresse){
         this.nom = nom;
@@ -50,8 +53,8 @@ public class Client{
     public Client getClient() {
         return Client;
     }
-      
 
+    
    
 
 
