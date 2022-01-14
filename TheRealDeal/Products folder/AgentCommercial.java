@@ -5,7 +5,7 @@ public class AgentCommercial{
 
      Scanner userInput = new Scanner (System.in);
     
-
+    public AgentCommercial(){}
 
     public AgentCommercial(int id){
         this.id =id;

@@ -65,6 +65,10 @@ this.DBC=clients ;
        return null;
    }
 
+   public void addCClient(CompteClient client){
+    DB_client.add(client);
+}
+
 public static void main(String[] args){
 
    DataBaseC db = new DataBaseC();
