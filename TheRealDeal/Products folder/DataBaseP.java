@@ -37,13 +37,13 @@ public class DataBaseP {
         stock.categories.add(Informatique);
 
         String[] caracteristics = new String[]{"Proccessor : Ryzen AMD", "RAM : 16 GB", "Disque Dur : 512 GB SSD " ,"Carte graphique : Asus GTX 1660 "};
-        Informatique.products.add(new Product("Ordinateur Gamer", 1001, "",caracteristics, 1200, 7));
+        Informatique.products.add(new Product("Ordinateur Gamer", 1001, "Ceci est un PC, puissant et très conseillé aux gamers",caracteristics, 161000, 7));
 
         String[] caracteristics0 = new String[]{"Proccessor intel CORE i7 8th Gen", "RAM 8 GB ", "Disque Dur : 1T HDD","Carte graphique : nvidia"};
-        Informatique.products.add(new Product("Ordinateur de Bureau", 1002, "",caracteristics0, 2500, 11));
+        Informatique.products.add(new Product("Ordinateur de Bureau", 1002, "Ceci est un PC, puissant et très conseillé aux gamers",caracteristics0, 172500, 11));
 
         String[] caracteristics01 = new String[]{"Proccessor : M1 ", "RAM 8 Go ", "Disque Dur : 256 Go","Carte graphique : Integre"};
-        Informatique.products.add(new Product("PC Portable APPLE MacBook Pro 2020", 1003, "",caracteristics01, 2800, 4));
+        Informatique.products.add(new Product("PC Portable APPLE MacBook Pro 2020", 1003, "Ceci est un PC, puissant et très conseillé aux gamers",caracteristics01, 2800, 4));
 
 
 
@@ -51,39 +51,39 @@ public class DataBaseP {
         stock.categories.add(Mobiles);
 
         String[] caracteristics1 = new String[]{"Processor : Exynos 990 Samsung", "Camera : 108 MPx", "Taille de l'ecran : 6.9 pouces", "RAM : 12Go","Batterie : 5000 mAh"};
-        Mobiles.products.add(new Product("Samsung Galaxy S20 Ultra", 2001, "aaaaa",caracteristics1, 1400, 22));
+        Mobiles.products.add(new Product("Samsung Galaxy S20 Ultra", 2001, "ceci est un telephone très puissant et performant",caracteristics1, 60000, 22));
 
         String[] caracteristics11 = new String[]{"Processor : A13 Bionic Apple", "Camera : 12 MPx", "Taille de l'ecran : 6.5 pouces", "RAM : 4 Go","Batterie : 3969 mAh"};
-        Mobiles.products.add(new Product("IPhone Pro Max ", 2002, "aaaaa",caracteristics11, 1400, 20));
+        Mobiles.products.add(new Product("IPhone Pro Max ", 2002, "Un smartphone avec un design tres chic et moderne, parfait pour toutes sortes d'utilisations",caracteristics11, 50400, 20));
 
     
         //Categorie Electronique
         stock.categories.add(Electronique);
 
         String[] caracteristics2 = new String[]{"Taille : 50 Pouces ", "Categorie :LED","Definition : UHD 4K", "Resolution : 3840x2160 px"};
-        Electronique.products.add(new Product("Television LG ", 3001, "ggggg",caracteristics2, 1700, 17));
+        Electronique.products.add(new Product("Television LG ", 3001, "Un televiseurs pour les familles avec un prix tres interessant",caracteristics2, 42000, 17));
 
         String[] caracteristics21 = new String[]{"Taille : 50 Pouces ","Categorie :LED", "Definition : UHD 4K", "Resolution : 3840x2160 px"};
-        Electronique.products.add(new Product("Television Samsung ", 3002, "ggggg",caracteristics21, 1700, 19));
+        Electronique.products.add(new Product("Television Samsung ", 3002, "Un televiseurs pour les familles avec un prix tres interessant",caracteristics21, 47000, 19));
         
 
         // Categorie Electromenager
         stock.categories.add(Electromenager);
 
         String[] caracteristics3 = new String[]{ "Largeur/Hauteur/Profondeur : 88.5/28.5/20.5","Poids : 10" ,"Categorie : Split", "Capacite de chauffage et refroidissement : 12000 Btu", " "};
-        Electromenager.products.add(new Product("Climatiseur LG", 4001, "ggggg",caracteristics3, 1520, 9));
+        Electromenager.products.add(new Product("Climatiseur LG", 4001, "Un climatiseurs pour refroidir vos mois d'été, pour plus de fraicheur",caracteristics3, 15200, 9));
 
         String[] caracteristics31 = new String[]{"Largeur/Hauteur/Profondeur : 73.5/187/267.5","Categorie : 2 portes","Capacite total : 499 Litres (Refrigerateur: 354L / Congelateur: 95L) ", };
-        Electromenager.products.add(new Product("Refrigerateur Brandt",4002,"gggg",caracteristics31,2300,9));
+        Electromenager.products.add(new Product("Refrigerateur Brandt",4002,"Un refrigerateur de haute gamme, parfait pour les familles nombreuse",caracteristics31,23000,9));
 
         //Kts scolaires
         stock.categories.add(Kits_scolaires);
 
         String[] caracteristics4 = new String[]{"Puissance nominale : 20 W", "Tension nominale : 12 V", "Courant : 1.11 A ","Duree de vie : > a 15 ans "};
-        Kits_scolaires.products.add(new Product("Panneau solaire ",5001 , "ggggg",caracteristics4, 2000, 16));
+        Kits_scolaires.products.add(new Product("Panneau solaire ",5001 , "Paneau solaire effecti pour toute puissance de lumières ",caracteristics4, 20000, 16));
 
         String[] caracteristics41 = new String[]{"Tension : 12 V", "Capacite : 100 Ah", "Duree de vie : 900 cycles "};
-        Kits_scolaires.products.add(new Product("Batterie solaire ",5002 , "ggggg",caracteristics41, 1020, 14));
+        Kits_scolaires.products.add(new Product("Batterie solaire ",5002 , "Elle fait un truc",caracteristics41, 10020, 14));
 
 
         this.DB_stock = stock;
@@ -103,28 +103,9 @@ public class DataBaseP {
         this.rebriques.add(reb1);
         this.rebriques.add(reb2);
         this.rebriques.add(reb3);
-        // A print test
+ 
 
-        // System.out.println("Produits informatique:");
-        // for(Product product : Informatique.products){
-        //     product.affiche_produit();
-        // }
-        // System.out.println("Produits mobiles:");
-        // for(Product product : Mobiles.products){
-        //     product.affiche_produit();
-        // }
-        // System.out.println("Produits electroniques:");
-        // for(Product product : Electronique.products){
-        //     product.affiche_produit();
-        // }
-        // System.out.println("Produits electromenagers:");
-        // for(Product product : Electromenager.products){
-        //     product.affiche_produit();
-        // }
-        // System.out.println("Produits kits scolaires:");
-        //  for(Product product : Kits_scolaires.products){
-        //     product.affiche_produit();
-        // }
+        
 
     }
 
@@ -192,11 +173,7 @@ public class DataBaseP {
             }
         }
     }
-    //we display the products first and then he chooses one of em, and he'll have the possiblity of reserving them.
-    // in the main function, we create un panier (a list of products) and we add the reserved products to it.
-    public void reserve(){
-
-    }
+    
 
     //Pour l'affichage du panier on prend la liste et on etire dessus puis utilise la méthode afficherProduit()
 

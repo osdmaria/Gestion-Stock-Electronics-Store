@@ -29,8 +29,7 @@ public class CompteClient{
         System.out.println("Nom : "+this.nom+
         "  Prenom : "+this.prenom+
         "  Ref : "+this.ref+
-        "  Adresse : "+this.adresse+
-        "  montant Cumule : "+this.m_rebriques.get(0).montant_cumule_de_rebrique + this.m_rebriques.get(1).montant_cumule_de_rebrique + this.m_rebriques.get(2).montant_cumule_de_rebrique);
+        "  Adresse : "+this.adresse);
     }
 
     public String getnom() {

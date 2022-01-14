@@ -35,7 +35,7 @@ public class Store {
         System.out.println("Voulez vous executer le programme en tant que:");
         System.out.println("1- Magasiner");
         System.out.println("2- Agent Commercial");
-        System.out.println("3- Client\n");
+        System.out.println("3- Client");
         System.out.println("4- Responsable Commercial\n");
         System.out.println("0- Quitter");
         // Take user input
@@ -250,7 +250,7 @@ public class Store {
 
                         System.out.println("Retourner un produit");
 
-                        System.out.println("Donner le ref du produit que vous voulez retourner");
+                        System.out.println("Donner la ref du produit que vous voulez retourner");
                         int refp = choixUser();
                         Product p = D.search_In_DB(refp);
                         System.out.println("Ce produit va etre retourné:  " + p.getName());
@@ -263,7 +263,7 @@ public class Store {
                         int qt = p.getQuantite();
                         D.update_Quantity(refp, qt++);
                         caisse = caisse + p.getPrix();
-                        System.out.println("Le produit a ete retourne . ");
+                        System.out.println("Le produit a ete retourne");
 
                         break;
 
@@ -518,7 +518,6 @@ public class Store {
                                 System.out.println("Votre panier");
                                 for (Product pr : panier) {
                                     pr.affiche_produit();
-                                    System.out.println();
                                 }
                                 System.out.println("Vous avez 2 jour pour venir recuperer vos produits");
                             }
@@ -528,7 +527,23 @@ public class Store {
 
                 }
                 case 4:
-                    System.out.println("");
+                    System.out.println("Bienvenue cher Responsable commercial!");
+                    System.out.println("Que voulez vous faire aujourd'hui:");
+                    System.out.println("1- Editer les prix des produits en stock");
+                    int temp1;
+                    do {
+                        temp1 = s.nextInt();
+                    } while (temp1 != 1);
+                    System.out.println("Entrer la reference du produit à editer");
+                    int ref_p = s.nextInt();
+                    Product produit = db.search_In_DB(ref_p);
+                    System.out.println("Voici le produit recherché:");
+                    produit.affiche_produit();
+                    System.out.println("Entrer le nouveau prix");
+                    int price = s.nextInt();
+                    produit.setPrix(price);
+                    System.out.println("Voici le nouveau descriptif du produit apres mise à jour:");
+                    produit.affiche_produit();
                     break;
                 case 0:
                 System.out.println(".");;
